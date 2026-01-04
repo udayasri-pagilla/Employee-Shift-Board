@@ -23,7 +23,8 @@ exports.getShifts = async (req, res) => {
   if (req.query.employee) query.employeeId = req.query.employee;
   if (req.query.date) query.date = req.query.date;
 
-  const shifts = await Shift.find(query).populate("employeeId");
+  const shifts = await Shift.find(query)
+    .populate("employeeId", "name employeeCode department");
   res.json(shifts);
 };
 
