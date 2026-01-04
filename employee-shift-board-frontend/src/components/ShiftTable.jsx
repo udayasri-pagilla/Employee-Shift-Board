@@ -16,7 +16,13 @@ export default function ShiftTable({ shifts, token, onDelete, role }) {
         <tbody>
           {shifts.map(s => (
             <tr key={s._id}>
-              <td>{s.employeeId?.name || s.employeeId}</td>
+              <td>
+  {s.employeeId?.name}
+  <div style={{ fontSize: "12px", color: "#666" }}>
+    {s.employeeId?.employeeCode}
+  </div>
+</td>
+
               <td>{s.date}</td>
               <td>{s.startTime} – {s.endTime}</td>
               {role === "admin" && (
