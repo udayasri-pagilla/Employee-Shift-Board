@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api"
+  baseURL: "https://employee-shift-board-fp44.onrender.com/api"
 });
 
 export const login = (data) => api.post("/login", data);
